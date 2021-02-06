@@ -4,7 +4,7 @@
 # Anything outside of the starter/ and test/ folder is optional.
 
 
-def InsertionSort(array):
+def InsertionSort(L):
     """Sort the array of integers in increasing order using insertion sort
 
     Args:
@@ -12,8 +12,14 @@ def InsertionSort(array):
         
     Note: You are not supposed to use python's inbuilt sorting function
     """
-
-    pass
+    for j in range(1, len(L)):
+        key = L[j]
+        i = j - 1
+        while i >= 0 and L[i] > key:
+            L[i+1] = L[i]
+            i = i - 1
+        L[i+1] = key
+    return L
 
 
 
@@ -24,8 +30,16 @@ def CountSwapsInInsertionSort(array):
     Args:
         array: An array of integers.
     """
-    
-    return -1
+    for j in range(1, len(L)):
+        key = L[j]
+        i = j - 1
+        count = 0
+        while i >= 0 and L[i] > key:
+            L[i+1] = L[i]
+            i = i - 1
+            count++
+        L[i+1] = key
+    return count
 
 
 
@@ -36,5 +50,13 @@ def countNumberOfInversions(array):
     Args:
         array: An array of integers.
     """
-
-    return -1
+    for j in range(1, len(L)):
+        key = L[j]
+        i = j - 1
+        count = 0
+        while i >= 0 and L[i] > key:
+            L[i+1] = L[i]
+            i = i - 1
+            count++
+        L[i+1] = key
+    return count
